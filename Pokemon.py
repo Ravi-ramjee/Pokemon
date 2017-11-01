@@ -6,9 +6,9 @@ class Pokemon:
 		self.Type = Type
 		self.attack = attack
 		self.defense = defense
-		#self.special_attack = special_attack
+		self.special_attack = special_attack
 		#self.special_defense = special_defense
-		#self.speed = speed
+		self.speed = speed
 		self.attack1 = attack1
 		self.attack2 = attack2
 
@@ -56,7 +56,7 @@ class Pokemon:
 
 	def attack1(self, victim):				#think about doing one defintion with a dictionary or list So no repeat of attack functions
 		victim_hp = victim.takedamage(self.attack1.get_damage())
-		print("Victim's new hp is {}, it went down by {}".format(victim_hp, self.attack1_damage))
+		print("Victim's updated hp is {}, it went down by {}".format(victim_hp, self.attack1_damage))
 
 	def attack2(self,victim):
 		victim_hp = victim.takedamage(self.attack1_damage)
@@ -94,15 +94,15 @@ class AttackMechanics:
 
 
 
-tackle = AttackMechanics(35,40,100)
+bite = AttackMechanics(35,60,100)
 flamethrower = AttackMechanics(75,25,89)
 
 print(tackle.get_damage())
 
 
 
-infernape = Pokemon("infernape",207, "Fire", 150,75,tackle,flamethrower)
-mewtwo = Pokemon("Mewtwo",300, "Psychic", 150,100,tackle,flamethrower)
+infernape = Pokemon("infernape",207, "Fire", 150,75,bite,flamethrower)
+mewtwo = Pokemon("Mewtwo",302, "Psychic", 150,120,bite,flamethrower)
 
 
 infernape.attack1(mewtwo)
